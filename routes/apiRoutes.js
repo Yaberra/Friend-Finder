@@ -1,23 +1,59 @@
+var path = require('path');
 
+// var popups = require('popups');
+
+var friends = require('../data/friend.js');
 
 module.exports = function(app) {
-	
-}
-
-// Your `apiRoutes.js` file should contain two routes:
-// A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
-// A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic. 
+    app.get('/api/friend', function(req, res) {
+        res.json(friends);
+    });
 
 
+    // A GET route to display a JSON of all possible friends.	
 
-// Score: 
-// Compatibility Results should be displayed in this format: {Name, Photo, Score}
-// Determine the user's most compatible friend using the following as a guide:
-// Convert each user's results into a simple array of numbers (ex: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`).
-// With that done, compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the `totalDifference`.
-// Example: 
-//   * User 1: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`
-//   * User 2: `[3, 2, 6, 4, 5, 1, 2, 5, 4, 1]`
-//   * Total Difference: **2 + 1 + 2 =** **_5_**
-// Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both `5-3` and `3-5` as `2`, and so on. 
-// The closest match will be the user with the least amount of difference.
+    app.post('/api/friend', function(req, res) {
+            var newSurvey = req.body;
+            console.log('newSurvey = ' + JSON.stringify(newSurvey));
+
+            var userResponses = newSurvey["scores[]"];
+            console.log('userResponses = ' + userResponses);
+
+            // Compute best friend match
+            var matchName = '';
+            var matchPhoto = '';
+            var totalDifference = 10000;
+
+
+            for (var i = 0; i < friends.length; i++) {
+                console.log('Friend = ' + JSON.stringify(friends[i]));
+
+                // Compute differenes for each question
+                var differences = 0;
+                for (var a = 0; a < userResponses.length; a++) {
+                    differences += Math.abs(friends[i].scores[a] - parseInt(userResponses[a]));
+                }
+                console.log('differences = ' + differences);
+
+                // If lowest difference, record the friend match
+                if (differences < totalDifference) {
+
+                    console.log('Best Match = ' + differences);
+                    console.log('Friend name = ' + friends[i].name);
+                    console.log('Friend photo = ' + friends[i].photo);
+                    // console.log('Friend score = ' + friends[i].score);
+
+                    totalDifference = differences;
+                    matchName = friends[i].name;
+                    matchPhoto = friends[i].photo;
+                }
+            }
+            // Add new user
+            friends.push(newSurvey);
+            res.json ({"Name": matchName, "Photo": matchPhoto});
+
+            // Send appropriate response
+  
+        });
+
+    };
