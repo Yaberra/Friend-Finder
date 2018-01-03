@@ -9,6 +9,7 @@
     <meta name="Dating App" content="">
     <meta author="Yeti" content="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/CSS/friendFinder.css">
 </head>
 
 <body>
@@ -23,149 +24,233 @@
         <form>
             <div class="form-group">
                 <label for="exampleInputName1">Name</label>
-                <input type="name" class="form-control" id="namePlaceHolder" aria-describedby="name" placeholder="name">
+                <input type="name" class="form-control" id="userName" aria-describedby="name" placeholder="name">
             </div>
             <div class="form-group">
                 <label for="exampleInputPhoto">Photo</label>
-                <input type="photo" class="form-control" id="photoPlaceHolder" aria-describedby="photo" placeholder="photo">
+                <input type="photo" class="form-control" id="userPhoto" aria-describedby="photo" placeholder="photo">
             </div>
     </div>
-    <div class="container">
-        <div class="col-md-6">
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 1</strong></h3></label>
-                <p>You make your bed in the morning</p>
-                <select class="form-control" id="Question1">
-                    <option></option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
+    <div id="surveyQuestions">
+        <div class="container">
+            <div class="col-md-6">
+                <div class="row">
+                    <label for="surveyQuestions1">
+                        <h3><strong>Question 1</strong></h3></label>
+                    <p>You love pets</p>
+                    <select class="form-control" id="Question1">
+                        <option></option>
+                        <option>1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="surveyQuestions2">
+                        <h3><strong>Question 2</strong></h3></label>
+                    <p>You make time for yourself and your family.</p>
+                    <select class="form-control" id="Question2">
+                        <option></option>
+                        <option>1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="surveyQuestions3">
+                        <h3><strong>Question 3</strong></h3></label>
+                    <p>Your ideal weekend is lounging at home and watching Netflix</p>
+                    <select class="form-control" id="Question3">
+                        <option></option>
+                        <option>1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="surveyQuestions4">
+                        <h3><strong>Question 4</strong></h3></label>
+                    <p>You get energized from spending time with people</p>
+                    <select class="form-control" id="Question4">
+                        <option></option>
+                        <option>1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="surveyQuestions5">
+                        <h3><strong>Question 5</strong></h3></label>
+                    <p>You are a good listener</p>
+                    <select class="form-control" id="Question5">
+                        <option></option>
+                        <option>1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="surveyQuestions6">
+                        <h3><strong>Question 6</strong></h3></label>
+                    <p>You are patient.</p>
+                    <select class="form-control" id="Question6">
+                        <option></option>
+                        <option>1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="surveyQuestions7">
+                        <h3><strong>Question 7</strong></h3></label>
+                    <p>You have a sense of purpose in life and committed to making life better for yourself and others.</p>
+                    <select class="form-control" id="Question7">
+                        <option></option>
+                        <option>1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="surveyQuestions8">
+                        <h3><strong>Question 8</strong></h3></label>
+                    <p>You enjoy activities outdoors </p>
+                    <select class="form-control" id="Question8">
+                        <option></option>
+                        <option>1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="surveyQuestions9">
+                        <h3><strong>Question 9</strong></h3></label>
+                    <p>You have major plans to acccomplish over the next 5 to 10 years including moving to another state or country.</p>
+                    <select class="form-control" id="Question9">
+                        <option></option>
+                        <option>1(Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="surveyQuestions10">
+                        <h3><strong>Question 10</strong></h3></label>
+                    <p>If you had to do it all over again you would change very little about your life.</p>
+                    <select class="form-control" id="Question10">
+                        <option></option>
+                        <option>1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                </form>
+                <br>
+                <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
             </div>
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 2</strong></h3></label>
-                <p>On your last vacation you planned everything </p>
-                <select class="form-control" id="Question2">
-                    <option></option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 3</strong></h3></label>
-                <p>Your ideal Saturday night is lounging and watching Netflix</p>
-                <select class="form-control" id="Question3">
-                    <option></option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 4</strong></h3></label>
-                <p>You get energized from spending time with people</p>
-                <select class="form-control" id="Question4">
-                    <option></option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 5</strong></h3></label>
-                <p>People have told you that you are a good listener</p>
-                <select class="form-control" id="Question5">
-                    <option></option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 6</strong></h3></label>
-                <p>You try to see things from another person’s perspective.</p>
-                <select class="form-control" id="Question6">
-                    <option></option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 7</strong></h3></label>
-                <p>You have a sense of purpose in life</p>
-                <select class="form-control" id="Question7">
-                    <option></option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 8</strong></h3></label>
-                <p>You love spending time outdoors </p>
-                <select class="form-control" id="Question8">
-                    <option></option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 9</strong></h3></label>
-                <p>If you had to list everything that you feel grateful for, it would be a very long list</p>
-                <select class="form-control" id="Question9">
-                    <option></option>
-                    <option>1(Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="survey">
-                    <h3><strong>Question 10</strong></h3></label>
-                <p>If you could live your life over, you would change almost nothing</p>
-                <select class="form-control" id="Question10">
-                    <option></option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                </select>
-            </div>
-            </form>
-            <br>
-            <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
         </div>
+    </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Best Match</h4>
+            <div class="divider"></div>
+            <h5 id="matchName"></h5>
+            <img id="matchPhoto" class="materialboxed" width="600g" height="500" src="">
+        </div>
+    </div>
+    <script type="text/javascript" src ="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script type="text/javascript" src = "./assets/Javascript/friendFinder.js"></script>
+    <link href= "https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css">
+   
+    <script type="text/javascript">
+
+    // $("#submitButton").on("click", function(event) {
+    //     event.preventDefault();
+
+    //     // Here we grab the form elements
+
+    //     var newSurvey = {
+    //         name: $("#userName").val().trim(),
+    //         photo: $("#userPhoto").val().trim(),
+    //         scores: [
+    //             $("#Question1").val().trim(),
+    //             $("#Question2").val().trim(),
+    //             $("#Question3").val().trim(),
+    //             $("#Question4").val().trim(),
+    //             $("#Question5").val().trim(),
+    //             $("#Question7").val().trim(),
+    //             $("#Question8").val().trim(),
+    //             $("#Question9").val().trim(),
+    //             $("#Question10").val().trim()
+
+    //         ]
+    //     };
+
+    //     console.log(newSurvey);
+
+    //     // "POSTS" our form data to our express server.
+
+    //     $.post('/api/friend', newSurvey)
+    //         .done(function(data) {
+    //             console.log('response = ' + JSON.stringify(data));
+
+    //             // Show the name and photo of the best match: 
+    //             $('#matchName').html(data.Name);bbbbbb
+    //             $('#matchPhoto').attr("src", data.Photo);
+
+    //             // Pop open the modal dialog
+    //             $('#modal1').modal('open');
+
+
+    //         });
+
+    //     // clear the from when submitting 
+
+    //     $("userName").val("");
+
+    //     $("addPhoto").val("");
+
+    //     $("#Question1").val("");
+
+    //     $("#Question2").val("");
+
+    //     $("#Question3").val("");
+
+    //     $("#Question4").val("");
+
+    //     $("#Question5").val("");
+
+    //     $("#Question7").val("");bb
+
+    //     $("#Question8").val("");
+
+    //     $("#Question9").val("");
+
+    //     $("#Question10").val("");
+
+    // });
+    </script>
 </body>
 
 </html>
