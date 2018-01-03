@@ -18,7 +18,7 @@ var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-
+ 
 // ================================================================================
 // ROUTER
 // The below points our server to a series of "route" files.
