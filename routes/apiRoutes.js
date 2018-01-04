@@ -18,7 +18,7 @@ module.exports = function(app) {
 
             var userResponses = newSurvey["scores[]"];
             console.log('userResponses = ' + userResponses);
-
+            console.log("=== " + userResponses [0]);
             // Compute best friend match
             var matchName = '';
             var matchPhoto = '';
@@ -31,7 +31,9 @@ module.exports = function(app) {
                 // Compute differenes for each question
                 var differences = 0;
                 for (var a = 0; a < userResponses.length; a++) {
-                    differences += Math.abs(friends[i].scores[a] - parseInt(userResponses[a]));
+                    var friendScore = friends[i].scores[a];
+                    var userScore = parseInt(userResponses[a]);
+                    differences += Math.abs (friendScore - userScore);
                 }
                 console.log('differences = ' + differences);
 
@@ -49,7 +51,7 @@ module.exports = function(app) {
                 }
             }
             // Add new user
-            friends.push(newSurvey);
+            // friends.push(newSurvey);
             res.json ({"Name": matchName, "Photo": matchPhoto});
 
             // Send appropriate response
